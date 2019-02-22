@@ -1,8 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+
 import os
-from os.path import join, abspath, isfile, isdir, exists, basename
+from os.path import isfile
 import sys
 import fmindex
+
 
 def main():
     if not len(sys.argv) in [3]:
@@ -13,17 +15,17 @@ def main():
         if not isfile(sys.argv[1]):
             print("Input file doesn't exist")
             os.abort()
-        
         inp = open(sys.argv[1])
-        
+
         # read input
         data = inp.read()
-        
+
         # create index
         idx = fmindex.index(data)
-        
+
         # save index to file
         fmindex.save(sys.argv[2], idx)
+
 
 if __name__ == '__main__':
     main()

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import unittest
@@ -24,7 +24,7 @@ class Test_BWT_Simple(unittest.TestCase):
     
     def tearDown(self):
         self.stop = time.time()
-        print str(int((self.stop - self.start) * 1000)) + 'ms'
+        print(str(int((self.stop - self.start) * 1000)) + 'ms')
         
     def do_test_string(self, s):
         ts = self.bw.transform(s)
